@@ -1,0 +1,86 @@
+* { box-sizing: border-box; }
+:root { color: #333342; background: #f8f6f0; font-family: "Segoe UI", sans-serif; font-synthesis: none; }
+body { margin: 0; min-width: 320px; background: radial-gradient(ellipse at 80% 0, #eeebf2 0, transparent 40%), #f8f6f0; }
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .4; }
+a { color: #555280; }
+button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid #8782ba; outline-offset: 3px; }
+.app-shell { max-width: 1440px; margin: auto; padding: 0 56px; }
+.app-header { display: flex; align-items: center; gap: 25px; padding: 26px 0; border-bottom: 1px solid #e3dfd8; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; font-family: Georgia, serif; font-size: 30px; letter-spacing: -.8px; color: #34365e; }
+.brand small { display: block; font-family: "Segoe UI", sans-serif; font-size: 7px; letter-spacing: 1.8px; margin-top: 6px; color: #8c8594; }
+.brand-mark { display: block; width: 41px; height: 45px; font-size: 40px; font-style: italic; line-height: 45px; position: relative; border: 1px solid #bcb4d0; border-radius: 4px 12px 4px 4px; text-align: center; }
+.brand-mark span { position: absolute; top: -10px; right: -9px; font-size: 20px; background: #f8f6f0; line-height: 22px; }
+.header-note { margin-left: auto; font-size: 11px; color: #817e78; }
+.privacy-dot { display: inline-block; height: 5px; width: 5px; border-radius: 50%; background: #839580; margin-right: 7px; }
+.new-story-button { padding: 10px 16px; background: #fffdf8; border: 1px solid #d5cedf; border-radius: 5px; font-size: 11px; color: #514e78; }
+.intro { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 40px 0 34px; }
+.eyebrow { font-size: 9px; letter-spacing: 1.9px; font-weight: 600; color: #91827a; margin: 0 0 13px; }
+.intro h1 { font-family: Georgia, serif; font-size: clamp(32px, 3.3vw, 46px); font-weight: 400; letter-spacing: -1.7px; margin: 0 0 13px; line-height: 1.15; }
+.intro h1 em { color: #66608c; font-weight: 400; }
+.intro p:not(.eyebrow) { margin: 0; color: #8b8379; font-size: 12px; line-height: 1.8; }
+.intro-ornament { min-width: 170px; text-align: center; color: #a399b4; display: flex; flex-direction: column; gap: 9px; }
+.intro-ornament span:first-child { font-size: 42px; }
+.intro-ornament span:last-child { font-size: 14px; }
+.intro-ornament i { font-family: Georgia, serif; font-size: 12px; color: #9c927e; }
+.story-bar { display: flex; align-items: center; gap: 30px; background: #eeebe3; padding: 23px 28px; border: 1px solid #e0dbd1; border-radius: 9px; }
+.story-identity { flex: 1; min-width: 0; }
+.story-identity label { display: block; font-size: 8px; letter-spacing: 1.7px; color: #8a8076; margin-bottom: 8px; }
+.story-identity input { display: block; width: 100%; background: transparent; border: 1px solid transparent; padding: 2px 0; color: #363344; font-family: Georgia, serif; font-size: 24px; }
+.story-identity input:hover { border-bottom-color: #bdb4ce; }
+.story-identity input.story-description { font-family: "Segoe UI", sans-serif; color: #8c8173; font-size: 11px; margin-top: 7px; }
+.story-stats { display: flex; gap: 26px; font-size: 9px; color: #8c8174; }
+.story-stats span { display: flex; flex-direction: column; gap: 6px; }
+.story-stats strong { font-family: Georgia, serif; font-size: 26px; color: #696279; font-weight: 400; }
+.workbench-toolbar { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; padding: 24px 0; }
+.mode-tabs { display: flex; border: 1px solid #dcd7d0; border-radius: 6px; background: #eeebe5; padding: 3px; }
+.mode-tabs button { background: transparent; border: 0; border-radius: 4px; padding: 9px 22px; color: #817b76; font-size: 11px; }
+.mode-tabs button span { margin-right: 6px; font-size: 15px; }
+.mode-tabs button[aria-pressed="true"] { background: #fffdf8; color: #534f7c; box-shadow: 0 1px 5px #28223113; }
+.tools { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+.tools button { background: transparent; border: 1px solid transparent; padding: 9px 10px; font-size: 10px; color: #777078; border-radius: 4px; }
+.tools button:hover { border-color: #ddd6e5; background: #f0ecf5; }
+.tools button.share-button { background: #555180; color: #fffdf7; padding: 10px 15px; margin-left: 5px; }
+.tools button.share-button:hover { background: #413e69; }
+.workspace-caption { display: flex; justify-content: space-between; padding: 0 2px 11px; color: #a29687; font-size: 8px; letter-spacing: 1.5px; gap: 12px; }
+.workspace-caption span:last-child { letter-spacing: .3px; color: #86917c; }
+.workspace-caption .status-warning { color: #9a6d4c !important; }
+.notice { display: flex; justify-content: space-between; gap: 15px; padding: 14px 18px; border: 1px solid #d9d3e6; border-radius: 6px; background: #efecf5; font-size: 12px; line-height: 1.6; margin: 0 0 18px; overflow-wrap: anywhere; }
+.notice button { border: 0; background: transparent; color: #766b84; font-size: 20px; }
+.share-panel { padding: 18px; background: #fffdf8; border: 1px solid #e2dce9; border-radius: 6px; margin-bottom: 20px; }
+.share-panel label, .share-panel small { display: block; font-size: 11px; color: #7d7484; line-height: 1.6; }
+.share-panel input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #d5cee0; border-radius: 4px; font-size: 12px; color: #555180; background: #f8f5fb; }
+.sample-library { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 25px; border: 1px solid #e1d9e7; border-radius: 8px; margin-bottom: 22px; background: #f1edf4; }
+.sample-library h2 { font: 24px/1.3 Georgia, serif; margin: 0; }
+.sample-library p:not(.eyebrow) { font-size: 12px; line-height: 1.7; color: #827584; }
+.sample-library button { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 12px; background: #fffdf8; border: 1px solid #ddd6e3; border-radius: 6px; padding: 22px; }
+.sample-library button:hover { border-color: #8d81b0; }
+.sample-symbol { font-size: 25px; color: #9887a8; }
+.sample-library strong { font: 20px/1.4 Georgia, serif; color: #504767; }
+.sample-library button > span:not(.sample-symbol) { font-size: 11px; line-height: 1.7; color: #8a7b83; }
+.sample-library small { color: #80718b; font-size: 9px; margin-top: auto; }
+.app-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; padding: 25px 0 32px; font-size: 9px; color: #9a9287; line-height: 1.6; }
+.app-footer > span:nth-child(2) { font-family: Georgia, serif; font-style: italic; font-size: 11px; }
+.app-footer > span:nth-child(2) span { margin-left: 10px; color: #9d8eaf; }
+.app-footer a { color: #8e829b; text-decoration: none; }
+.save-status { max-width: 420px; }
+.save-status > span { color: #899779; font-size: 9px; margin-right: 5px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+@media (min-width: 1600px) { .app-shell { padding: 0 64px; } }
+@media (max-width: 1000px) { .app-shell { padding: 0 26px; } .header-note { display: none; } .new-story-button { margin-left: auto; } .tools { gap: 2px; } .tools button { padding: 8px; } }
+@media (max-width: 650px) {
+  .app-shell { padding: 0 16px; }
+  .app-header { padding: 20px 0; }
+  .brand { font-size: 25px; } .brand small { font-size: 6px; letter-spacing: 1.2px; }
+  .brand-mark { width: 35px; height: 39px; line-height: 39px; font-size: 34px; }
+  .intro { padding: 32px 0 27px; } .intro-ornament { display: none; }
+  .intro h1 { letter-spacing: -1px; } .intro p:not(.eyebrow) { font-size: 11px; }
+  .story-bar { padding: 20px 18px; gap: 12px; } .story-identity input { font-size: 20px; }
+  .story-stats { gap: 13px; } .story-stats strong { font-size: 23px; }
+  .workbench-toolbar { padding: 20px 0; } .tools { width: 100%; justify-content: space-between; gap: 3px; }
+  .tools button { font-size: 9px; padding: 9px 5px; } .tools button.share-button { padding: 9px; margin-left: 0; }
+  .sample-library { grid-template-columns: 1fr; }
+  .workspace-caption { font-size: 7px; letter-spacing: 1px; }
+}
