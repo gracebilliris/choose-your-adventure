@@ -27,7 +27,7 @@ npm run preview -- --port 5195
 
 ## Save, import, export and share
 
-Edits, including incomplete drafts, auto-save in this browser’s localStorage. Only one current draft is stored. Storage can be unavailable or cleared: use **Export JSON** for durable backups. New story/sample/import replacement asks first and supports Undo. Shared stories open in Play without overwriting your saved draft until edited.
+Edits, including incomplete drafts, auto-save in this browser’s localStorage under `choose-your-adventure.draft.v1`; the portable-story storage helper uses `choose-your-adventure.story.v1`. Only one current draft is stored. Starting a new story replaces only this app’s draft; other apps’ keys are never cleared. Storage can be unavailable or cleared: use **Export JSON** for durable backups. New story/sample/import replacement asks first and supports Undo. Shared stories open in Play without overwriting your saved draft until edited.
 
 **Export JSON** creates a portable version-1 story file. **Import JSON** validates its exact schema, field lengths, IDs and graph before replacing anything. Fix errors before exporting or sharing; unreachable passages and unfinished paths are warnings and are allowed.
 

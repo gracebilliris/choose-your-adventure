@@ -16,7 +16,9 @@ async function main() {
     await expect(page.getByRole('heading', { name: 'One story. Infinite paths.' })).toBeVisible();
     await expect(page.getByLabel('Story title', { exact: true })).toHaveValue('The Lighthouse That Forgot the Sea');
     await page.screenshot({ path: `artifacts/${label}-editor.png`, fullPage: true });
+    await page.evaluate(() => localStorage.setItem('another-app.test.sentinel', 'keep'));
     await page.getByRole('button', { name: 'New story', exact: false }).click();
+    expect(await page.evaluate(() => localStorage.getItem('another-app.test.sentinel'))).toBe('keep');
     await page.getByLabel('Story title', { exact: true }).fill('The Paper Door');
     await page.getByLabel('Passage title', { exact: true }).fill('A quiet threshold');
     await page.getByLabel('Passage text', { exact: true }).fill('A paper door opens. Which way will you go?');
@@ -102,6 +104,8 @@ async function main() {
     await page.getByRole('button', { name: 'Examine the luminous pear.', exact: false }).click();
     await page.getByRole('button', { name: 'Carry the seeds to twelve different households.', exact: false }).click();
     await expect(page.getByRole('heading', { name: 'The end', exact: true })).toBeVisible();
+    expect(await page.evaluate(() => localStorage.getItem('another-app.test.sentinel'))).toBe('keep');
+    await page.evaluate(() => localStorage.removeItem('another-app.test.sentinel'));
     expect(failures).toEqual([]);
     console.log(JSON.stringify({ result: 'PASS', base, browser: 'chromium', checks: ['create/edit/branch', 'two endings', 'history/back/restart', 'JSON export/import', 'draft reload', 'incomplete draft reload', 'share fresh browser', 'malformed import/share', 'safe literal text', 'delete incoming links', 'mobile layout', 'second sample'], consoleErrors: failures }, null, 2));
   } finally { await browser.close(); }

@@ -1,6 +1,6 @@
 import type { Passage, Story, StoryIssue } from './types';
 
-export const STORAGE_KEY = 'branchlight.story.v1';
+export const STORAGE_KEY = 'choose-your-adventure.story.v1';
 export const MAX_JSON_BYTES = 200 * 1024;
 export const MAX_SHARE_LENGTH = 16_000;
 export const MAX_PASSAGES = 200;

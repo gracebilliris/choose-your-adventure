@@ -5,7 +5,7 @@ import { samples } from './samples';
 import { createBlankStory, decodeShare, encodeShare, exportStory, loadStory, MAX_JSON_BYTES, parseStory, validateStory } from './story';
 import type { Story } from './types';
 
-const DRAFT_KEY = 'storyloom.draft.v1';
+const DRAFT_KEY = 'choose-your-adventure.draft.v1';
 
 function initialStory(): { story: Story; notice: string; shared: boolean } {
   if (location.hash) {
